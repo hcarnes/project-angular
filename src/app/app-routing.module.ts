@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
+// RouterModule makes router directives available for use in the AppModule components that will need them.
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
