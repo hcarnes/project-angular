@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HeroesComponent } from './heroes/heroes.component';
 
-const routes: Routes= [
+const routes: Routes = [
   { path: 'heroes', component: HeroesComponent }
 ];
 
 // RouterModule makes router directives available for use in the AppModule components that will need them
 @NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
