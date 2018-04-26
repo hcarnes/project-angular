@@ -42,11 +42,11 @@ export class HeroService {
     )
   }
 
-  getLivesSaved(id: number): Observable<Hero> {
-    const url = `${this.lambdaHeroes/livesSaved}/${id}`
-    return this.http.get<Hero>(url).pipe(
+  getLivesSaved(id: number): Observable<number> {
+    const url = `${this.lambdaHeroes}/${id}/livesSaved`
+    return this.http.get<number>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
-      catchError(this.handleError<Hero>(`getHero id=${id}`))
+      catchError(this.handleError<number>(`getHero id=${id}`))
     )
   }
 
