@@ -23,7 +23,7 @@ export class HeroService {
 
   private heroesUrl = 'api/heroes'; // URL to web api
 
-  private lambdaHeroes = 'https://ast9z666ll.execute-api.us-east-2.amazonaws.com/dev/myFunctionName'
+  private lambdaHeroes = 'https://ast9z666ll.execute-api.us-east-2.amazonaws.com/dev/Heroes'
 
   getHeroes (): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.lambdaHeroes)
@@ -35,7 +35,7 @@ export class HeroService {
 
   /** GET hero by id. Will 404 if id not found */
   getHero(id: number): Observable<Hero> {
-    const url = `${this.heroesUrl}/${id}`
+    const url = `${this.lambdaHeroes}/${id}`
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
