@@ -1,34 +1,34 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Hero } from '../hero';
+import { Cat } from '../hero';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { HeroService }  from '../hero.service';
+import { CatService }  from '../hero.service';
 
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
   styleUrls: ['./hero-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
-  @Input() hero: Hero;
+export class CatDetailComponent implements OnInit {
+  @Input() hero: Cat;
   @Input() livesSaved: number;
 
   constructor(
     private route: ActivatedRoute,
-    private heroService: HeroService,
+    private heroService: CatService,
     private location: Location
   ) {}
 
   ngOnInit(): void {
-    this.getHero();
+    this.getCat();
     this.getLivesSaved();
   }
   
-  getHero(): void {
+  getCat(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
+    this.heroService.getCat(id)
       .subscribe(hero => this.hero = hero);
   }
 
@@ -43,7 +43,7 @@ export class HeroDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.heroService.updateHero(this.hero)
+    this.heroService.updateCat(this.hero)
     .subscribe(() => this.goBack())
   }
 }
