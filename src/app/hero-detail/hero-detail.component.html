@@ -1,13 +1,13 @@
 <div *ngIf="hero">
-  <button (click)="goBack()">go back</button>
   <h2>{{ hero.name | uppercase }} Details</h2>
   <img width="200" src='{{hero.pictureUrl}}'>
-  <p>Lives Left: {{ livesSaved }} </p>
-  <div><span>id: </span>{{hero.id}}</div>
+  <h3>Lives Left: {{ livesSaved }} </h3>
+  <h3>id: {{hero.id}}</h3>
   <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name">
-    </label>
+     <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="hero.name" placeholder="name">
+    </mat-form-field>
   </div>
-  <button (click)="save()">save</button>
+  <button mat-raised-button color="primary" (click)="save()">save</button>
+  <button mat-raised-button color="warn" (click)="goBack()">go back</button>
 </div>

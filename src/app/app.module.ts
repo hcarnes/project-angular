@@ -14,12 +14,19 @@ import { MessageService }       from './message.service';
 import { MessagesComponent }    from './messages/messages.component';
 import { CatSearchComponent } from './hero-search/hero-search.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   declarations: [
     AppComponent,

@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 
 import { CatService }  from '../hero.service';
 
+
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
