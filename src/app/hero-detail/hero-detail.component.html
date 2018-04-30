@@ -1,12 +1,12 @@
 <div *ngIf="hero">
   <h2>{{ hero.name | uppercase }} Details</h2>
   <img width="200" src='{{hero.pictureUrl}}'>
+  <div>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="hero.name" placeholder="name">
+    </mat-form-field> 
   <h3>Lives Left: {{ livesSaved }} </h3>
   <h3>id: {{hero.id}}</h3>
-  <div>
-     <mat-form-field class="example-full-width">
-      <input matInput [(ngModel)]="hero.name" placeholder="name">
-    </mat-form-field>
   </div>
   <button mat-raised-button color="primary" (click)="save()">save</button>
   <button mat-raised-button color="warn" (click)="goBack()">go back</button>

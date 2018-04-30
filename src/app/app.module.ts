@@ -17,6 +17,7 @@ import { CatSearchComponent } from './hero-search/hero-search.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {MatInputModule} from '@angular/material/input';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule
   ],
   declarations: [
     AppComponent,
